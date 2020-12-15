@@ -3,6 +3,8 @@
  # OUTPUTS: Movie title w/ description, Menu (tty-prompt), prompt to exit app
 
 require "tty-prompt"
+require_relative "questionairre" #cannot figure out why this relative path containing my hash is unavailable. Will keep it in main app page until sorted out
+require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected
  movies = {
@@ -25,8 +27,18 @@ end
 
 fav_genre = prompt.select("Great to hear! What's your (least) favourite genre?", %w(Horror Comedy Drama Action Adventure))
 
-fav_type = prompt.select("Finally, what do you want your cinematic experience to be?", %w(Laugh Cringe Embarrass Sleep)) #Gotta figure out how to make these array arguments into a sentence
+fav_type = prompt.select("Finally, what do you want your cinematic experience to be?", ["I want to laugh", "Make me cringe", "I really enjoy embarrassing myself infront of all my friends and peers", "I need a nap"]) #Gotta figure out how to make these array arguments into a sentence
 
+if fav_type == "I want to laugh"
+    fav_type = "Laugh"
+elsif fav_type == "Make me cringe"
+     fav_type = "Cringe"
+elsif fav_type == "I really enjoy embarrassing myself infront of all my friends and peers"
+    fav_type = "Embarrass"
+elsif fav_type == "I need a nap"
+    fav_type = "Sleep"
+end
+    
 #This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works
 if fav_genre == "Horror" && fav_type == "Laugh"
     puts movies[:horror][:laugh][0]
@@ -52,7 +64,7 @@ elsif fav_genre == "Drama" && fav_type == "Embarrass"
         puts movies[:drama][:embarrass][0]
 elsif fav_genre == "Drama" && fav_type == "Sleep"
         puts movies[:drama][:boredom][0]
-    elsif fav_genre == "Action" && fav_type == "Laugh"
+elsif fav_genre == "Action" && fav_type == "Laugh"
         puts movies[:action][:laugh][0]
 elsif fav_genre == "Action" && fav_type == "Cringe"
         puts movies[:action][:cringe][0]
@@ -60,7 +72,7 @@ elsif fav_genre == "Action" && fav_type == "Embarrass"
         puts movies[:action][:embarrass][0]
 elsif fav_genre == "Action" && fav_type == "Sleep"
         puts movies[:action][:boredom][0]
-    elsif fav_genre == "Adventure" && fav_type == "Laugh"
+elsif fav_genre == "Adventure" && fav_type == "Laugh"
         puts movies[:adventure][:laugh][0]
 elsif fav_genre == "Adventure" && fav_type == "Cringe"
         puts movies[:adventure][:cringe][0]

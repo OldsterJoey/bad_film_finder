@@ -8,7 +8,7 @@ require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected
  movies = {
-    :horror => {:laugh => ["Leprachaun 5: In the Hood"], :cringe => ["The Happening"], :embarrass => ["Howling II"], :boredom => ["Birdemic"]}, 
+    :horror => {:laugh => ["Leprachaun 5: In the Hood", "Wicker Man"], :cringe => ["The Happening"], :embarrass => ["Howling II"], :boredom => ["Birdemic"]}, 
     :comedy => {:laugh => ["Food Fight"], :cringe => ["Jack and Jill"], :embarrass => ["Freddy Got Fingered"], :boredom => ["Date Movie"]}, 
     :drama => {:laugh => ["The Room"], :cringe => ["Gigli"], :embarrass => ["Cats"], :boredom => ["Mulan"]}, 
     :action => {:laugh => ["Battlefield Earth"], :cringe => ["Batman and Robin"], :embarrass => ["Catwoman"], :boredom => ["Godzilla"]}, 
@@ -17,6 +17,8 @@ require_relative "methods"
 
 #This is the beginning of my questionairre using the tty-prompt Gem
 prompt = TTY::Prompt.new
+
+ascii_title
 
 init_question = prompt.yes?("Do you want to watch a terrible film?")
 
@@ -41,45 +43,45 @@ end
     
 #This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works
 if fav_genre == "Horror" && fav_type == "Laugh"
-    puts movies[:horror][:laugh][0]
+    puts movies[:horror][:laugh].sample
 elsif fav_genre == "Horror" && fav_type == "Cringe"
-    puts movies[:horror][:cringe][0]
+    puts movies[:horror][:cringe].sample
 elsif fav_genre == "Horror" && fav_type == "Embarrass"
-    puts movies[:horror][:embarrass][0]
+    puts movies[:horror][:embarrass].sample
 elsif fav_genre == "Horror" && fav_type == "Sleep"
-    puts movies[:horror][:boredom][0]
+    puts movies[:horror][:boredom].sample
 elsif fav_genre == "Comedy" && fav_type == "Laugh"
-        puts movies[:comedy][:laugh][0]
+        puts movies[:comedy][:laugh].sample
 elsif fav_genre == "Comedy" && fav_type == "Cringe"
-        puts movies[:comedy][:cringe][0]
+        puts movies[:comedy][:cringe].sample
 elsif fav_genre == "Comedy" && fav_type == "Embarrass"
-        puts movies[:comedy][:embarrass][0]
+        puts movies[:comedy][:embarrass].sample
 elsif fav_genre == "Comedy" && fav_type == "Sleep"
-        puts movies[:comedy][:boredom][0]
+        puts movies[:comedy][:boredom].sample
 elsif fav_genre == "Drama" && fav_type == "Laugh"
-        puts movies[:drama][:laugh][0]
+        puts movies[:drama][:laugh].sample
 elsif fav_genre == "Drama" && fav_type == "Cringe"
-        puts movies[:drama][:cringe][0]
+        puts movies[:drama][:cringe].sample
 elsif fav_genre == "Drama" && fav_type == "Embarrass"
-        puts movies[:drama][:embarrass][0]
+        puts movies[:drama][:embarrass].sample
 elsif fav_genre == "Drama" && fav_type == "Sleep"
-        puts movies[:drama][:boredom][0]
+        puts movies[:drama][:boredom].sample
 elsif fav_genre == "Action" && fav_type == "Laugh"
-        puts movies[:action][:laugh][0]
+        puts movies[:action][:laugh].sample
 elsif fav_genre == "Action" && fav_type == "Cringe"
-        puts movies[:action][:cringe][0]
+        puts movies[:action][:cringe].sample
 elsif fav_genre == "Action" && fav_type == "Embarrass"
-        puts movies[:action][:embarrass][0]
+        puts movies[:action][:embarrass].sample
 elsif fav_genre == "Action" && fav_type == "Sleep"
-        puts movies[:action][:boredom][0]
+        puts movies[:action][:boredom].sample
 elsif fav_genre == "Adventure" && fav_type == "Laugh"
-        puts movies[:adventure][:laugh][0]
+        puts movies[:adventure][:laugh].sample
 elsif fav_genre == "Adventure" && fav_type == "Cringe"
-        puts movies[:adventure][:cringe][0]
+        puts movies[:adventure][:cringe].sample
 elsif fav_genre == "Adventure" && fav_type == "Embarrass"
-        puts movies[:adventure][:embarrass][0]
+        puts movies[:adventure][:embarrass].sample
 elsif fav_genre == "Adventure" && fav_type == "Sleep"
-        puts movies[:adventure][:boredom][0]
+        puts movies[:adventure][:boredom].sample
 else
     puts "you should have found this on purpose"
 end

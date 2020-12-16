@@ -24,11 +24,17 @@ end
 
 def retry_questionairre
     prompt = TTY::Prompt.new(active_color: :green)
+    colorizer = Lolize::Colorizer.new
     retry_question = prompt.select(Rainbow("Did you want to start again?").underline.magenta, %w(Yes No))
     if retry_question == "No"
-        puts Rainbow("Please enjoy the movie! (or don't)").magenta
+        puts ""
+        colorizer.write "Please enjoy the movie! (or don't)"
+        puts ""
+        sleep 1
+        puts ""
         exit
     end
+    puts ""
     puts Rainbow("Not good (bad) enough for you eh? Lets find you another one!").red
     sleep 2
     puts ""

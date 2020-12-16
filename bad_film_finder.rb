@@ -26,10 +26,15 @@ while prompt
     init_question = prompt.select(Rainbow("Do you want to watch a terrible film?").underline.magenta, %w(Yes No))
 
     if init_question == "No"
-         good_movie_lover
+        puts ""
+        good_movie_lover
     end
 
+    puts ""
+
     fav_genre = prompt.select(Rainbow("Great to hear! What's your (least) favourite genre?").underline.magenta, %w(Horror Comedy Drama Action Adventure))
+
+    puts ""
 
     fav_type = prompt.select(Rainbow("Finally, what do you want your cinematic experience to be?").underline.magenta, ["I want to laugh", "Make me cringe", "I really enjoy embarrassing myself infront of all my friends and peers", "I need a nap"]) #Gotta figure out how to make these array arguments into a sentence
 
@@ -43,8 +48,13 @@ while prompt
         fav_type = "Sleep"
     end
 
+    puts ""
+
     puts Rainbow("So you've selected #{fav_genre} and #{fav_type}...").green.underline
     sleep 1
+
+    puts ""
+
     print "You should watch "
 
         #This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works
@@ -92,5 +102,9 @@ while prompt
         puts "you should have found this on purpose"
     end
 
+    sleep 1
+    
+    puts ""
+    
     retry_questionairre
 end

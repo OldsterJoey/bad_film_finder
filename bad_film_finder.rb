@@ -92,12 +92,5 @@ while prompt
         puts "you should have found this on purpose"
     end
 
-    retry_question = prompt.select(Rainbow("Did you want to start again?").underline.magenta, %w(Yes No))
-    if retry_question == "No"
-        puts Rainbow("Please enjoy the movie! (or don't)").magenta
-        exit
-    end
-    puts Rainbow("Not good (bad) enough for you eh? Lets find you another one!").red
-    sleep 2
-    puts ""
+    retry_questionairre
 end

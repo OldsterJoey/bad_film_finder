@@ -22,3 +22,14 @@ def good_movie_lover
     exit
 end
 
+def retry_questionairre
+    prompt = TTY::Prompt.new(active_color: :green)
+    retry_question = prompt.select(Rainbow("Did you want to start again?").underline.magenta, %w(Yes No))
+    if retry_question == "No"
+        puts Rainbow("Please enjoy the movie! (or don't)").magenta
+        exit
+    end
+    puts Rainbow("Not good (bad) enough for you eh? Lets find you another one!").red
+    sleep 2
+    puts ""
+end

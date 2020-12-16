@@ -3,7 +3,6 @@
  # OUTPUTS: Movie title w/ description, Menu (tty-prompt), prompt to exit app
 
 require "tty-prompt"
-require_relative "questionairre" #cannot figure out why this relative path containing my hash is unavailable. Will keep it in main app page until sorted out
 require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected
@@ -16,15 +15,15 @@ require_relative "methods"
    }
 
 #This is the beginning of my questionairre using the tty-prompt Gem
-prompt = TTY::Prompt.new
 
 ascii_title
+
+prompt = TTY::Prompt.new
 
 init_question = prompt.yes?("Do you want to watch a terrible film?")
 
 if init_question == false
-    puts "Sorry, you've come to the wrong place!"
-    exit
+        good_movie_lover
 end
 
 fav_genre = prompt.select("Great to hear! What's your (least) favourite genre?", %w(Horror Comedy Drama Action Adventure))
@@ -40,7 +39,11 @@ elsif fav_type == "I really enjoy embarrassing myself infront of all my friends 
 elsif fav_type == "I need a nap"
     fav_type = "Sleep"
 end
-    
+
+puts "So you've selected #{fav_genre} and #{fav_type}..."
+
+print "You should watch "
+
 #This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works
 if fav_genre == "Horror" && fav_type == "Laugh"
     puts movies[:horror][:laugh].sample

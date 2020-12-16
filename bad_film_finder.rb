@@ -4,6 +4,7 @@
 
 require "tty-prompt"
 require "rainbow"
+require "lolize"
 require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected

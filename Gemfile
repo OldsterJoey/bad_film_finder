@@ -11,3 +11,5 @@ gem "tty", "~> 0.7.0"
 gem "rspec", "~> 3.10"
 
 gem "rainbow", "~> 3.0"
+
+gem "lolize", "~> 0.0.3"

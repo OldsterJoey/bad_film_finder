@@ -7,11 +7,11 @@ require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected
  movies = {
-    :horror => {:laugh => ["Leprachaun 5: In the Hood", "Wicker Man"], :cringe => ["The Happening"], :embarrass => ["Howling II"], :boredom => ["Birdemic"]}, 
-    :comedy => {:laugh => ["Food Fight"], :cringe => ["Jack and Jill"], :embarrass => ["Freddy Got Fingered"], :boredom => ["Date Movie"]}, 
-    :drama => {:laugh => ["The Room"], :cringe => ["Gigli"], :embarrass => ["Cats"], :boredom => ["Mulan"]}, 
-    :action => {:laugh => ["Battlefield Earth"], :cringe => ["Batman and Robin"], :embarrass => ["Catwoman"], :boredom => ["Godzilla"]}, 
-    :adventure => {:laugh => ["Baby Geniuses"], :cringe => ["Super Mario Bros"], :embarrass => ["Garfield: A Tail of Two Kitties"], :boredom => ["The Last Airbender"]},
+    :horror => {:laugh => ["Leprachaun 5: In the Hood (2000)", "Wicker Man (2006)"], :cringe => ["The Happening (2008)"], :embarrass => ["Howling II: Your Sister Is a Werewolf (1985)"], :boredom => ["Birdemic: Shock and Terror (2010)"]}, 
+    :comedy => {:laugh => ["Food Fight (2012)"], :cringe => ["Jack and Jill (2011)"], :embarrass => ["Freddy Got Fingered (2001)"], :boredom => ["Date Movie (2006"]}, 
+    :drama => {:laugh => ["The Room (2003)"], :cringe => ["Gigli (2003)"], :embarrass => ["Cats (2019)"], :boredom => ["Mulan (2020)"]}, 
+    :action => {:laugh => ["Battlefield Earth (2000)"], :cringe => ["Batman and Robin (1997)"], :embarrass => ["Catwoman (2004)"], :boredom => ["Godzilla (1998)"]}, 
+    :adventure => {:laugh => ["Baby Geniuses (1999)"], :cringe => ["Super Mario Bros (1993)"], :embarrass => ["Garfield: A Tail of Two Kitties (2006)"], :boredom => ["The Last Airbender (2010)"]},
    }
 
 #This is the beginning of my questionairre using the tty-prompt Gem

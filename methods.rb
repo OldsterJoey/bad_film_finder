@@ -18,11 +18,3 @@ def good_movie_lover
     exit
 end
 
-class Movie
-    attr_reader :name
-    def initialize(name, genre, type)
-        @name = name
-        @genre = genre
-        @type = type
-    end
-end

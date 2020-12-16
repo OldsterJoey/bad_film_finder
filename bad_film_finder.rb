@@ -21,9 +21,9 @@ ascii_title
 
 prompt = TTY::Prompt.new(active_color: :green)
 
-init_question = prompt.yes?(Rainbow("Do you want to watch a terrible film?").underline.magenta)
+init_question = prompt.select(Rainbow("Do you want to watch a terrible film?").underline.magenta, %w(Yes No))
 
-if init_question == false
+if init_question == "No"
         good_movie_lover
 end
 
@@ -42,7 +42,7 @@ elsif fav_type == "I need a nap"
 end
 
 puts Rainbow("So you've selected #{fav_genre} and #{fav_type}...").green.underline
-
+sleep 1
 print "You should watch "
 
 #This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works

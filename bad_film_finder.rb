@@ -3,6 +3,7 @@
  # OUTPUTS: Movie title w/ description, Menu (tty-prompt), prompt to exit app
 
 require "tty-prompt"
+require "rainbow"
 require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected

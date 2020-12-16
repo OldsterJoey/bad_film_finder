@@ -19,17 +19,17 @@ require_relative "methods"
 
 ascii_title
 
-prompt = TTY::Prompt.new
+prompt = TTY::Prompt.new(active_color: :green)
 
-init_question = prompt.yes?("Do you want to watch a terrible film?")
+init_question = prompt.yes?(Rainbow("Do you want to watch a terrible film?").underline.magenta)
 
 if init_question == false
         good_movie_lover
 end
 
-fav_genre = prompt.select("Great to hear! What's your (least) favourite genre?", %w(Horror Comedy Drama Action Adventure))
+fav_genre = prompt.select(Rainbow("Great to hear! What's your (least) favourite genre?").underline.magenta, %w(Horror Comedy Drama Action Adventure))
 
-fav_type = prompt.select("Finally, what do you want your cinematic experience to be?", ["I want to laugh", "Make me cringe", "I really enjoy embarrassing myself infront of all my friends and peers", "I need a nap"]) #Gotta figure out how to make these array arguments into a sentence
+fav_type = prompt.select(Rainbow("Finally, what do you want your cinematic experience to be?").underline.magenta, ["I want to laugh", "Make me cringe", "I really enjoy embarrassing myself infront of all my friends and peers", "I need a nap"]) #Gotta figure out how to make these array arguments into a sentence
 
 if fav_type == "I want to laugh"
     fav_type = "Laugh"
@@ -41,7 +41,7 @@ elsif fav_type == "I need a nap"
     fav_type = "Sleep"
 end
 
-puts "So you've selected #{fav_genre} and #{fav_type}..."
+puts Rainbow("So you've selected #{fav_genre} and #{fav_type}...").green.underline
 
 print "You should watch "
 

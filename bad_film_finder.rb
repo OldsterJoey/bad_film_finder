@@ -49,9 +49,9 @@ while prompt
     good_movie_lover
   elsif init_question == 'Gimme something quick!'
     puts ''
-    fav_genre = ['horror', 'comedy', 'drama', 'action', 'adventure'].sample
-    fav_type = ['laugh', 'cringe', 'embarrass', 'boredom'].sample
-    print Rainbow("You should watch ").green
+    fav_genre = %w[horror comedy drama action adventure].sample
+    fav_type = %w[laugh cringe embarrass boredom].sample
+    print Rainbow('You should watch ').green
 
     movie_results = movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
     puts Rainbow(movie_results[:title]).cyan
@@ -59,7 +59,7 @@ while prompt
     puts ''
     display_overview(movie_info)
     sleep 1
-  
+
     puts ''
     return
   end
@@ -91,7 +91,7 @@ while prompt
 
   puts ''
 
-  print Rainbow("You should watch ").green
+  print Rainbow('You should watch ').green
 
   movie_results = movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
   puts Rainbow(movie_results[:title]).cyan

@@ -15,3 +15,5 @@ gem 'rainbow', '~> 3.0'
 gem 'lolize', '~> 0.0.3'
 
 gem 'faraday', '~> 1.1'
+
+gem 'rubocop', '~> 0.59.2'

@@ -9,7 +9,7 @@ require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected
  movies = {
-    :horror => {:laugh => ["Leprachaun 5: In the Hood (2000)", "Wicker Man (2006)", "Troll II (1990)", "Reefer Madness", "Plan 9 from Outer Space (1959)"], :cringe => ["The Happening (2008)", "The Giant Claw (1957)"], :embarrass => ["Howling II: Your Sister Is a Werewolf (1985)"], :boredom => ["Birdemic: Shock and Terror (2010)", "Anaconda (1997)", "Deep Blue Sea (1999)"]}, 
+    :horror => {:laugh => ["Leprechaun 5: In the Hood (2000)", "Wicker Man (2006)", "Troll II (1990)", "Reefer Madness", "Plan 9 from Outer Space (1959)"], :cringe => ["The Happening (2008)", "The Giant Claw (1957)"], :embarrass => ["Howling II: Your Sister Is a Werewolf (1985)"], :boredom => ["Birdemic: Shock and Terror (2010)", "Anaconda (1997)", "Deep Blue Sea (1999)"]}, 
     :comedy => {:laugh => ["White Chicks", "Scary Movie 3"], :cringe => ["Jack and Jill (2011)", "Kazaam (1996)", "Spice World (1997)", "Pixels (2013)"], :embarrass => ["Freddy Got Fingered (2001)", "Food Fight (2012)", "Vampires Suck (2010)", "Movie 43 (2013)"], :boredom => ["Date Movie (2006)", "She's All That (1999)", "Disaster Movie (2008)"]}, 
     :drama => {:laugh => ["The Room (2003)"], :cringe => ["Gigli (2003)", "Obsessed (2009)"], :embarrass => ["Cats (2019)", "Showgirls (1995)"], :boredom => ["You Got Served (2004)", "Max Payne (2008)"]}, 
     :action => {:laugh => ["Battlefield Earth (2000)", "Mortal Kombat (1995)", "Bad Boys II (2003)"], :cringe => ["Batman and Robin (1997)", "Wild Wild West (1999)"], :embarrass => ["Catwoman (2004)"], :boredom => ["Godzilla (1998)", "Battleship (2012)", "Pacific Rim: Uprising (2018)"]}, 
@@ -23,11 +23,16 @@ ascii_title
 prompt = TTY::Prompt.new(active_color: :green)
 
 while prompt
-    init_question = prompt.select(Rainbow("Do you want to watch a terrible film?").underline.magenta, %w(Yes No))
+    init_question = prompt.select(Rainbow("Do you want to watch a terrible film?").underline.magenta, ["Yes", "No", "Gimme something quick!"])
 
     if init_question == "No"
         puts ""
         good_movie_lover
+    end
+
+    if init_question == "Gimme something quick!"
+        puts ""
+        random_movie
     end
 
     puts ""
@@ -58,49 +63,8 @@ while prompt
     print "You should watch "
 
         #This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works
-    if fav_genre == "Horror" && fav_type == "Laugh"
-        puts movies[:horror][:laugh].sample
-    elsif fav_genre == "Horror" && fav_type == "Cringe"
-        puts movies[:horror][:cringe].sample
-    elsif fav_genre == "Horror" && fav_type == "Embarrass"
-        puts movies[:horror][:embarrass].sample
-    elsif fav_genre == "Horror" && fav_type == "Sleep"
-        puts movies[:horror][:boredom].sample
-    elsif fav_genre == "Comedy" && fav_type == "Laugh"
-        puts movies[:comedy][:laugh].sample
-    elsif fav_genre == "Comedy" && fav_type == "Cringe"
-        puts movies[:comedy][:cringe].sample
-    elsif fav_genre == "Comedy" && fav_type == "Embarrass"
-        puts movies[:comedy][:embarrass].sample
-    elsif fav_genre == "Comedy" && fav_type == "Sleep"
-        puts movies[:comedy][:boredom].sample
-    elsif fav_genre == "Drama" && fav_type == "Laugh"
-        puts movies[:drama][:laugh].sample
-    elsif fav_genre == "Drama" && fav_type == "Cringe"
-        puts movies[:drama][:cringe].sample
-    elsif fav_genre == "Drama" && fav_type == "Embarrass"
-        puts movies[:drama][:embarrass].sample
-    elsif fav_genre == "Drama" && fav_type == "Sleep"
-        puts movies[:drama][:boredom].sample
-    elsif fav_genre == "Action" && fav_type == "Laugh"
-        puts movies[:action][:laugh].sample
-    elsif fav_genre == "Action" && fav_type == "Cringe"
-        puts movies[:action][:cringe].sample
-    elsif fav_genre == "Action" && fav_type == "Embarrass"
-        puts movies[:action][:embarrass].sample
-    elsif fav_genre == "Action" && fav_type == "Sleep"
-        puts movies[:action][:boredom].sample
-    elsif fav_genre == "Adventure" && fav_type == "Laugh"
-        puts movies[:adventure][:laugh].sample
-    elsif fav_genre == "Adventure" && fav_type == "Cringe"
-        puts movies[:adventure][:cringe].sample
-    elsif fav_genre == "Adventure" && fav_type == "Embarrass"
-        puts movies[:adventure][:embarrass].sample
-    elsif fav_genre == "Adventure" && fav_type == "Sleep"
-        puts movies[:adventure][:boredom].sample
-    else
-        puts "you should have found this on purpose"
-    end
+
+    p movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
 
     sleep 1
     

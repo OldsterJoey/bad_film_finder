@@ -13,3 +13,5 @@ gem "rspec", "~> 3.10"
 gem "rainbow", "~> 3.0"
 
 gem "lolize", "~> 0.0.3"
+
+gem "faraday", "~> 1.1"

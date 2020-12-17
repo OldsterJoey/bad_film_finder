@@ -47,9 +47,7 @@ while prompt
   if init_question == 'No'
     puts ''
     good_movie_lover
-  end
-
-  if init_question == 'Gimme something quick!'
+  elsif init_question == 'Gimme something quick!'
     puts ''
     fav_genre = ['horror', 'comedy', 'drama', 'action', 'adventure'].sample
     fav_type = ['laugh', 'cringe', 'embarrass', 'boredom'].sample
@@ -63,6 +61,7 @@ while prompt
     sleep 1
   
     puts ''
+    return
   end
 
   puts ''

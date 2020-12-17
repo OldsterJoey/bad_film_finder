@@ -80,7 +80,13 @@ end
 movie_info = get_movie_info('tt0105643', API_KEY)
 
 def display_overview(info)
+  puts "Here's a description:"
+  puts ''
   puts info['movie_results'][0]['overview']
+  puts ''
+  print 'this film got a terrible score of '
+  print info['movie_results'][0]['vote_average']
+  puts " on IMDb so you know it's bad!"
 end
 
 # tester:

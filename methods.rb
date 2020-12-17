@@ -72,4 +72,5 @@ def display_overview(info)
 puts info["movie_results"][0]["overview"]
 end
 
-display_overview(movie_info)
+#tester:
+# display_overview(movie_info) 

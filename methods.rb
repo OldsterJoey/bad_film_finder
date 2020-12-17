@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'tty-prompt'
+require 'tty-progressbar'
 require 'rainbow'
 require 'lolize'
 require 'faraday'
@@ -57,6 +58,14 @@ def random_movie
   puts ''
   sleep 1
   exit
+end
+
+def load_bar
+    bar = TTY::ProgressBar.new(Rainbow("Im finding you a terrible movie... [:bar]").yellow, total: 20)
+    20.times do
+    sleep(0.1)
+    bar.advance(1)
+    end
 end
 
 def get_movie_info(movie_id, api_key)

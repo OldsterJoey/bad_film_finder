@@ -75,7 +75,10 @@ while prompt
   puts ''
 
   puts Rainbow("So you've selected #{fav_genre} and #{fav_type}...").green.underline
-  sleep 1
+
+  puts ''
+
+  load_bar
 
   puts ''
 

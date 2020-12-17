@@ -72,4 +72,4 @@ def display_overview(info)
 puts info["movie_results"][0]["overview"]
 end
 
-# display_overview(movie_info)
+display_overview(movie_info)

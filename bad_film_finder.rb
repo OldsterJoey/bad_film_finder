@@ -37,7 +37,7 @@ movies = {
 
 # This is the beginning of my questionairre using the tty-prompt Gem
 
-# ascii_title
+ascii_title
 
 prompt = TTY::Prompt.new(active_color: :green)
 
@@ -51,10 +51,10 @@ while prompt
     puts ''
     fav_genre = ['horror', 'comedy', 'drama', 'action', 'adventure'].sample
     fav_type = ['laugh', 'cringe', 'embarrass', 'boredom'].sample
-    print 'You should watch '
+    print Rainbow("You should watch ").green
 
     movie_results = movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
-    p movie_results[:title]
+    puts Rainbow(movie_results[:title]).cyan
     movie_info = get_movie_info(movie_results[:movie_id], API_KEY)
     puts ''
     display_overview(movie_info)
@@ -91,10 +91,10 @@ while prompt
 
   puts ''
 
-  print 'You should watch '
+  print Rainbow("You should watch ").green
 
   movie_results = movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
-  p movie_results[:title]
+  puts Rainbow(movie_results[:title]).cyan
   movie_info = get_movie_info(movie_results[:movie_id], API_KEY)
   puts ''
   display_overview(movie_info)

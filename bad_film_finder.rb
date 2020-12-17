@@ -8,10 +8,6 @@ require "lolize"
 require "json"
 require_relative "methods"
 
-file = File.read("./credentials.json")
-credentials = JSON.parse(file)
-API_KEY = credentials["api_key"]
-
 #Below is my hash that stores all hardcoded films I hand selected
 #  movies = {
 #     :horror => {:laugh => ["Leprechaun 5: In the Hood (2000)", "Wicker Man (2006)", "Troll II (1990)", "Reefer Madness", "Plan 9 from Outer Space (1959)"], :cringe => ["The Happening (2008)", "The Giant Claw (1957)"], :embarrass => ["Howling II: Your Sister Is a Werewolf (1985)"], :boredom => ["Birdemic: Shock and Terror (2010)", "Anaconda (1997)", "Deep Blue Sea (1999)"]}, 
@@ -33,15 +29,15 @@ API_KEY = credentials["api_key"]
         :embarrass => [{title: "Freddy Got Fingered", date: "2001", movie_id: "tt0240515"}, {title: "Foodfight!", date: "2012", movie_id: "tt0249516"}, {title: "Vampires Suck", date: "2010", movie_id: "tt1666186"}, {title: "Movie 43", date: "2013", movie_id: "tt1333125"}], 
         :boredom => [{title: "Date Movie", date: "2006", movie_id: "tt0466342"}, {title: "She's All That", date: "1999", movie_id: "tt0160862"}, {title: "Disaster Movie", date: "2008", movie_id: "tt1213644"}]}, 
     :drama => 
-        {:laugh => ["The Room (2003)"], 
-        :cringe => ["Gigli (2003)", "Obsessed (2009)"], 
-        :embarrass => ["Cats (2019)", "Showgirls (1995)"], 
-        :boredom => ["You Got Served (2004)", "Max Payne (2008)"]}, 
+        {:laugh => [{title: "The Room", date: "2003", movie_id: "tt0368226"}], 
+        :cringe => [{title: "Gigli", date: "2003", movie_id: "tt0299930"}, {title: "Obsessed", date: "2000", movie_id: "tt1198138"}], 
+        :embarrass => [{title: "Cats", date: "2019", movie_id: "tt5697572"}, {title: "Showgirls", date: "1995", movie_id: "tt0114436"}], 
+        :boredom => [{title: "You Got Served", date: "2004", movie_id: "tt0365957"}, {title: "Max Payne", date: "2008", movie_id: "tt0467197"}]}, 
     :action => 
-        {:laugh => ["Battlefield Earth (2000)", "Mortal Kombat (1995)", "Bad Boys II (2003)"], 
-        :cringe => ["Batman and Robin (1997)", "Wild Wild West (1999)"], 
-        :embarrass => ["Catwoman (2004)"], 
-        :boredom => ["Godzilla (1998)", "Battleship (2012)", "Pacific Rim: Uprising (2018)"]}, 
+        {:laugh => [{title: "Battlefield Earth", date: "2000", movie_id: "tt0185183"}, {title: "Mortal Kombat", date: "1995", movie_id: "tt0113855"}, {title: "Bad Boys II", date: "2003", movie_id: "tt0172156"}], 
+        :cringe => [{title: "Batman and Robin", date: "1997", movie_id: "tt0118688"}, {title: "Wild Wild West", date: "1999", movie_id: "tt0120891"}], 
+        :embarrass => [{title: "Catwoman", date: "2004", movie_id: "tt0327554"}], 
+        :boredom => [{title: "Godzilla", date: "1998", movie_id: "tt0120685"}, {title: "Battleship", date: "2012", movie_id: "tt1440129"}, {title: "Pacific Rim: Uprising", date: "2018", movie_id: "tt2557478"}]}, 
     :adventure => 
         {:laugh => ["Baby Geniuses (1999)", "Masters of the Universe (1987)"], 
         :cringe => ["Super Mario Bros (1993)", "Mac and Me (1988)"], 

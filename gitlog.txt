@@ -1,0 +1,113 @@
+commit b61e709d70084eb588212fa869e48947d57564a6
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Thu Dec 17 15:46:13 2020 +1100
+
+    began to convert movie type arrays into hashes, with added movie id's. Horror done comedy halfway done. Also solved a bug where boredom hashes were not printing
+
+commit cfd56f84870ca817634ce5be0ce472f1d67e8377
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Thu Dec 17 14:10:11 2020 +1100
+
+    made it so my code that displays the movie results also displays a description of the film based on movie id
+
+commit 0e813d6b8d88606eb2cba628158242bf9121a309
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Thu Dec 17 12:38:51 2020 +1100
+
+    created methods to access movie database api, created json file to hide my api key, and heavily simplified final results code
+
+commit 09415f94850987d5181a207897a6332e43d979e3
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 22:52:06 2020 +1100
+
+    Added more films to the movies array
+
+commit dbe379902552646e5cfa5a8f2a134352f2cf8ebe
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 22:19:50 2020 +1100
+
+    Added more pauses and spacing between all questions
+
+commit 245a285c6ca267e9a483f5d5bc04e2f62db79105
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 22:05:04 2020 +1100
+
+    Refactored retry section of questionairre to be a method
+
+commit ca1ba901d7bca97ad60f8eadaf6c2d15ba60b0f6
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 21:58:01 2020 +1100
+
+    Put questionairre into a loop and added a restart feature
+
+commit c80b55e712403781c70bc0bb431dab2359a1c831
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 21:08:38 2020 +1100
+
+    Added lolize gem and used it to make my ascii title rainbow
+
+commit d0ecbed41d6e590c19b407a68797ccb3636783a1
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 20:54:44 2020 +1100
+
+    Altered the yes/no tty-prompt selection to have a menu instead of a y/n input, ensured my bash script was working correctly.
+
+commit a0d55e93b57100f30f9bc5741ee2a7706c49b335
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 20:27:28 2020 +1100
+
+    Added color to app with rainbow gem
+
+commit cd9f90ef921a2fc1fd3842773d25259165e05225
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 18:40:00 2020 +1100
+
+    Added rainbow gem and colourised my ascii title
+
+commit 8978685d4c423ad7a35437b60ce87e4c4ec192f2
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 18:12:29 2020 +1100
+
+    Added a release year for each film within movie hash
+
+commit 8893da9c9e150b42595b3c0ce89ae5264a1b3c22
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Wed Dec 16 17:05:50 2020 +1100
+
+    Extended good_movie_lover features
+
+commit 18fa6023650dccaf24bc169497119bee533debc7
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Tue Dec 15 23:56:21 2020 +1100
+
+    Began making code more concise by adding external methods into methods.rb. Also added an ascii art title
+
+commit b0ac745706f910b390126d94e92f3d69336dcfec
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Tue Dec 15 23:24:49 2020 +1100
+
+    Created some basic rspec tests for if I convert my app to be class based, began to create a Movie class for possible later use, added more personality to final question
+
+commit c89fa2f23f7bf4ad69b5071d993fed1ac954e627
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Tue Dec 15 19:32:33 2020 +1100
+
+    Created a functional control flow that utilizes tty-prompt gem. It isn't currently pretty, but it functions at the most basic level.
+
+commit 14d3784d09522293acaecef06a7b349a384fcd4f
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Tue Dec 15 17:36:56 2020 +1100
+
+    Created basic object for movie access testing, added pseudo code, and created spec folder and file ready for rspec testing
+
+commit bc873786235487909da6cbfdcc6cef86818efd74
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Sun Dec 13 17:49:16 2020 +1100
+
+    Created gemfile with bundler, installed tty toolkit gem and added flowchart to directory
+
+commit 15d44c692277604bd2ce672ff69c315fc9220c2a
+Author: Joey S <gcam022005@coderacademy.edu.au>
+Date:   Sun Dec 13 16:29:54 2020 +1100
+
+    Initial commit, created index.rb

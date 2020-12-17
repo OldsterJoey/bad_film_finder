@@ -19,7 +19,7 @@ movies = {
             boredom: [{ title: 'Birdemic: Shock and Terror', date: '2010', movie_id: 'tt1316037' }, { title: 'Anaconda', date: '1997', movie_id: 'tt0118615' }, { title: 'Deep Blue Sea', date: '1999', movie_id: 'tt0149261' }] },
   comedy: { laugh: [{ title: 'White Chicks', date: '2004', movie_id: 'tt0381707' }, { title: 'Scary Movie 3', date: '2003', movie_id: 'tt0306047' }],
             cringe: [{ title: 'Jack and Jill', date: '2011', movie_id: 'tt0810913' }, { title: 'Kazaam', date: '1996', movie_id: 'tt0116756' }, { title: 'Spice World', date: '1997', movie_id: 'tt0120185' }, { title: 'Pixels', date: '2013', movie_id: 'tt2120120' }],
-            embarrass: [{ title: 'Freddy Got Fingered', date: '2001', movie_id: 'tt0240515' }, { title: 'Foodfight!', date: '2012', movie_id: 'tt0249516' }, { title: 'Vampires Suck', date: '2010', movie_id: 'tt1666186' }, { title: 'Movie 43', date: '2013', movie_id: 'tt1333125' }, { title: 'Dirty Grandpa', date: '2016', movie_id: "tt1860213"}],
+            embarrass: [{ title: 'Freddy Got Fingered', date: '2001', movie_id: 'tt0240515' }, { title: 'Foodfight!', date: '2012', movie_id: 'tt0249516' }, { title: 'Vampires Suck', date: '2010', movie_id: 'tt1666186' }, { title: 'Movie 43', date: '2013', movie_id: 'tt1333125' }, { title: 'Dirty Grandpa', date: '2016', movie_id: 'tt1860213' }],
             boredom: [{ title: 'Date Movie', date: '2006', movie_id: 'tt0466342' }, { title: "She's All That", date: '1999', movie_id: 'tt0160862' }, { title: 'Disaster Movie', date: '2008', movie_id: 'tt1213644' }] },
   drama: { laugh: [{ title: 'The Room', date: '2003', movie_id: 'tt0368226' }],
            cringe: [{ title: 'Gigli', date: '2003', movie_id: 'tt0299930' }, { title: 'Obsessed', date: '2000', movie_id: 'tt1198138' }],
@@ -37,7 +37,7 @@ movies = {
 
 # This is the beginning of my questionairre using the tty-prompt Gem
 
-ascii_title
+# ascii_title
 
 prompt = TTY::Prompt.new(active_color: :green)
 
@@ -51,15 +51,26 @@ while prompt
 
   if init_question == 'Gimme something quick!'
     puts ''
-    random_movie
+    fav_genre = ['horror', 'comedy', 'drama', 'action', 'adventure'].sample
+    fav_type = ['laugh', 'cringe', 'embarrass', 'boredom'].sample
+    print 'You should watch '
+
+    movie_results = movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
+    p movie_results[:title]
+    movie_info = get_movie_info(movie_results[:movie_id], API_KEY)
+    puts ''
+    display_overview(movie_info)
+    sleep 1
+  
+    puts ''
   end
 
   puts ''
-
+  puts Rainbow('(^ ᴗ ^)').green
   fav_genre = prompt.select(Rainbow("Great to hear! What's your (least) favourite genre?").underline.magenta, %w[Horror Comedy Drama Action Adventure])
 
   puts ''
-
+  puts Rainbow('\(- o -)/').green
   fav_type = prompt.select(Rainbow('Finally, what do you want your cinematic experience to be?').underline.magenta, ['I want to laugh', 'Make me cringe', 'I really enjoy embarrassing myself infront of all my friends and peers', 'I need a nap']) # Gotta figure out how to make these array arguments into a sentence
 
   if fav_type == 'I want to laugh'
@@ -75,16 +86,13 @@ while prompt
   puts ''
 
   puts Rainbow("So you've selected #{fav_genre} and #{fav_type}...").green.underline
-
   puts ''
-
+  puts Rainbow('((> _ <))').yellow
   load_bar
 
   puts ''
 
   print 'You should watch '
-
-  # This is where the app accesses the films dependent on the user input. It is extremely ugly, but it works
 
   movie_results = movies[fav_genre.downcase.to_sym][fav_type.downcase.to_sym].sample
   p movie_results[:title]

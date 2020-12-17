@@ -44,6 +44,7 @@ def retry_questionairre
     exit
   end
   puts ''
+  puts Rainbow('(. _ .)').red
   puts Rainbow('Not good (bad) enough for you eh? Lets find you another one!').red
   sleep 2
   puts ''
@@ -61,11 +62,11 @@ def random_movie
 end
 
 def load_bar
-    bar = TTY::ProgressBar.new(Rainbow("Im finding you a terrible movie... [:bar]").yellow, total: 20)
-    20.times do
+  bar = TTY::ProgressBar.new(Rainbow('Im finding you a terrible movie... [:bar]').yellow, total: 20)
+  20.times do
     sleep(0.1)
     bar.advance(1)
-    end
+  end
 end
 
 def get_movie_info(movie_id, api_key)

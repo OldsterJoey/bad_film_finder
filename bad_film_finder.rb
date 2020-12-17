@@ -9,15 +9,8 @@ require "json"
 require_relative "methods"
 
 #Below is my hash that stores all hardcoded films I hand selected
-#  movies = {
-#     :horror => {:laugh => ["Leprechaun 5: In the Hood (2000)", "Wicker Man (2006)", "Troll II (1990)", "Reefer Madness", "Plan 9 from Outer Space (1959)"], :cringe => ["The Happening (2008)", "The Giant Claw (1957)"], :embarrass => ["Howling II: Your Sister Is a Werewolf (1985)"], :boredom => ["Birdemic: Shock and Terror (2010)", "Anaconda (1997)", "Deep Blue Sea (1999)"]}, 
-#     :comedy => {:laugh => ["White Chicks", "Scary Movie 3"], :cringe => ["Jack and Jill (2011)", "Kazaam (1996)", "Spice World (1997)", "Pixels (2013)"], :embarrass => ["Freddy Got Fingered (2001)", "Food Fight (2012)", "Vampires Suck (2010)", "Movie 43 (2013)"], :boredom => ["Date Movie (2006)", "She's All That (1999)", "Disaster Movie (2008)"]}, 
-#     :drama => {:laugh => ["The Room (2003)"], :cringe => ["Gigli (2003)", "Obsessed (2009)"], :embarrass => ["Cats (2019)", "Showgirls (1995)"], :boredom => ["You Got Served (2004)", "Max Payne (2008)"]}, 
-#     :action => {:laugh => ["Battlefield Earth (2000)", "Mortal Kombat (1995)", "Bad Boys II (2003)"], :cringe => ["Batman and Robin (1997)", "Wild Wild West (1999)"], :embarrass => ["Catwoman (2004)"], :boredom => ["Godzilla (1998)", "Battleship (2012)", "Pacific Rim: Uprising (2018)"]}, 
-#     :adventure => {:laugh => ["Baby Geniuses (1999)", "Masters of the Universe (1987)"], :cringe => ["Super Mario Bros (1993)", "Mac and Me (1988)"], :embarrass => ["Garfield: A Tail of Two Kitties (2006)", "Howard the Duck (1986)"], :boredom => ["The Last Airbender (2010)", "Hercules (2014)"]},
-#    }
 
-   movies = {
+movies = {
     :horror => 
         {:laugh => [{title: "Leprechaun 5: In the Hood", date: "2000", movie_id: "tt0209095"}, {title: "Wicker Man (2006)", date: "2006", movie_id: "tt0450345"}, {title: "Troll II", date: "1990", movie_id: "tt0105643"}, {title: "Reefer Madness", date: "1936", movie_id: "tt0028346"}, {title: "Plan 9 from Outer Space", date: "1959", movie_id: "tt0052077"}], 
         :cringe => [{title: "The Happening", date: "2008", movie_id: "tt0949731"}, {title: "The Giant Claw", date: "1957", movie_id: "tt0050432"}], 
@@ -39,10 +32,10 @@ require_relative "methods"
         :embarrass => [{title: "Catwoman", date: "2004", movie_id: "tt0327554"}], 
         :boredom => [{title: "Godzilla", date: "1998", movie_id: "tt0120685"}, {title: "Battleship", date: "2012", movie_id: "tt1440129"}, {title: "Pacific Rim: Uprising", date: "2018", movie_id: "tt2557478"}]}, 
     :adventure => 
-        {:laugh => ["Baby Geniuses (1999)", "Masters of the Universe (1987)"], 
-        :cringe => ["Super Mario Bros (1993)", "Mac and Me (1988)"], 
-        :embarrass => ["Garfield: A Tail of Two Kitties (2006)", "Howard the Duck (1986)"], 
-        :boredom => ["The Last Airbender (2010)", "Hercules (2014)"]},
+        {:laugh => [{title: "Baby Geniuses", date: "1999", movie_id: "tt0118665"}, {title: "Masters of the Universe", date: "1987", movie_id: "tt0093507"}], 
+        :cringe => [{title: "Super Mario Bros", date: "1993", movie_id: "tt0108255"}, {title: "Mac and Me", date: "1988", movie_id: "tt0095560"}], 
+        :embarrass => [{title: "Garfield: A Tail of Two Kitties", date: "2006", movie_id: "tt0455499"}, {title: "Howard the Duck", date: "1986", movie_id: "tt0091225"}], 
+        :boredom => [{title: "The Last Airbender", date: "2010", movie_id: "tt0938283"}, {title: "Hercules", date: "2014", movie_id: "tt1267297"}]},
    }
 
 

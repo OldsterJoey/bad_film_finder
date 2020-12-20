@@ -62,10 +62,11 @@ prompt = TTY::Prompt.new(active_color: :green)
 while prompt
   init_question = prompt.select(Rainbow('Do you want to watch a terrible film?').underline.magenta, ['Yes', 'No', 'Gimme something quick!'])
 
-  if init_question == 'No'
+  case init_question
+  when 'No'
     puts ''
     good_movie_lover
-  elsif init_question == 'Gimme something quick!'
+  when 'Gimme something quick!'
     puts ''
     fav_genre = %w[horror comedy drama action adventure].sample
     fav_type = %w[laugh cringe embarrass boredom].sample
@@ -90,13 +91,14 @@ while prompt
   puts Rainbow('\(- o -)/').green
   fav_type = prompt.select(Rainbow('Finally, what do you want your cinematic experience to be?').underline.magenta, ['I want to laugh', 'Make me cringe', 'I really enjoy embarrassing myself infront of all my friends and peers', 'I need a nap']) # Gotta figure out how to make these array arguments into a sentence
 
-  if fav_type == 'I want to laugh'
+  case fav_type
+  when 'I want to laugh'
     fav_type = 'Laugh'
-  elsif fav_type == 'Make me cringe'
+  when 'Make me cringe'
     fav_type = 'Cringe'
-  elsif fav_type == 'I really enjoy embarrassing myself infront of all my friends and peers'
+  when 'I really enjoy embarrassing myself infront of all my friends and peers'
     fav_type = 'Embarrass'
-  elsif fav_type == 'I need a nap'
+  when 'I need a nap'
     fav_type = 'Boredom'
   end
 

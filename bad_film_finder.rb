@@ -10,6 +10,24 @@ require 'lolize'
 require 'json'
 require_relative 'methods'
 
+# Command Line Arguments
+
+if ARGV.length > 0
+  flag, *rest = ARGV
+  ARGV.clear
+  case flag 
+  when '-help'
+      puts "Installation and app information avaiable in README"
+      exit
+  when '-info'
+      puts "This program is using Ruby version: #{RUBY_VERSION}"
+      exit
+  else
+      puts "Invalid argument"
+      exit
+  end 
+end 
+
 # Below is my hash that stores all hardcoded films I hand selected
 
 movies = {

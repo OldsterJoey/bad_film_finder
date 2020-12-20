@@ -36,7 +36,7 @@ If there ever is a case where the application is unable to access data for the m
 ## Control Flow Diagram
 
 Original Diagram
-![Original Diagram](flowchart.png)
+![Original Diagram](Flowchart.png)
 Diagram Updated with tty-prompt and Movie Database API in mind 
 ![Updated Diagram](flowchartupdate.png)
 

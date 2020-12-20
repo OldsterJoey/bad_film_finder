@@ -66,8 +66,7 @@ def get_movie_info(movie_id, api_key)
   info_hash
 end
 
-#Test Parameters
-movie_info = get_movie_info('tt0105643', API_KEY)
+
 
 def display_overview(info)
   puts Rainbow("Here's a description:").green.underline
@@ -77,7 +76,12 @@ def display_overview(info)
   print Rainbow('this film got a review score of ').green
   print Rainbow(info['movie_results'][0]['vote_average']).cyan
   puts Rainbow(" on IMDb, but on the bad film finder, everything's a 10.0!").green
+rescue NoMethodError
+  puts Rainbow("Unfortunately, an error has occured and I can't seem to find any information for this movie... Maybe test your luck and watch it anyway?").red
 end
 
+# Manual Test Parameters
+# movie_info = get_movie_info('tt0105643', API_KEY)
 # tester:
 # display_overview(movie_info)
+# Should Print the information for the movie Trolls 2 Exactly as it would print within app. If this does not work there is a problem with the movie id or access to my API Key
